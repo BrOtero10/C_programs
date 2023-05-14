@@ -12,14 +12,18 @@ int main(){
     scanf("%d", &number);
 
 
-    //Excessões de numeros primos
-    if(number == 1 || number == 2){
+    //Excessão de numero primo
+    if(number == 2){
         printf("E' um numero primo.");
     }
+	
+	if(number == 1){
+		printf("Nao e' um numero primo.");
+	}
 
     else{
 
-        for(i = number - 1; i > 2; i--){
+        for(i = number - 1; i >= 2; i--){
 
             //Testa se a divisão do número por qualquer antecessor seu se iguala a 0
             if((number % i) == 0){
