@@ -81,71 +81,56 @@ void preencher_mdouble(double **matriz, int linhas, int colunas, double valor){
 
 void ordenar_mint(int **matriz, int linhas, int colunas){
 	
-	int matriz_linha[linhas * colunas];
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz_linha[colunas * i + j] = matriz[i][j];
-
 	for(int i = 0; i < linhas * colunas; i++){
         for(int j = 0; j < linhas * colunas - i - 1; j++){
-            if(matriz_linha[j] > matriz_linha[j + 1]){
-                int x = matriz_linha[j];
-                matriz_linha[j] = matriz_linha[j + 1];
-                matriz_linha[j + 1] = x;
+			
+			int lin1 = j / colunas, lin2 = (j + 1) / colunas;
+			int col1 = j % colunas, col2 = (j + 1) % colunas;
+			
+			
+            if(matriz[lin1][col1] > matriz[lin2][col2]){
+                int x = matriz[lin1][col1];
+                matriz[lin1][col1] = matriz[lin2][col2];
+                matriz[lin2][col2] = x;
             }
         }
     }
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz[i][j] = matriz_linha[colunas * i + j];
 }
 
 void ordenar_mfloat(float **matriz, int linhas, int colunas){
 	
-	float matriz_linha[linhas * colunas];
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz_linha[colunas * i + j] = matriz[i][j];
-
 	for(int i = 0; i < linhas * colunas; i++){
         for(int j = 0; j < linhas * colunas - i - 1; j++){
-            if(matriz_linha[j] > matriz_linha[j + 1]){
-                float x = matriz_linha[j];
-                matriz_linha[j] = matriz_linha[j + 1];
-                matriz_linha[j + 1] = x;
+			
+			int lin1 = j / colunas, lin2 = (j + 1) / colunas;
+			int col1 = j % colunas, col2 = (j + 1) % colunas;
+			
+			
+            if(matriz[lin1][col1] > matriz[lin2][col2]){
+                float x = matriz[lin1][col1];
+                matriz[lin1][col1] = matriz[lin2][col2];
+                matriz[lin2][col2] = x;
             }
         }
     }
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz[i][j] = matriz_linha[colunas * i + j];
 }
 
 void ordenar_mdouble(double **matriz, int linhas, int colunas){
 	
-	double matriz_linha[linhas * colunas];
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz_linha[colunas * i + j] = matriz[i][j];
-
 	for(int i = 0; i < linhas * colunas; i++){
         for(int j = 0; j < linhas * colunas - i - 1; j++){
-            if(matriz_linha[j] > matriz_linha[j + 1]){
-                double x = matriz_linha[j];
-                matriz_linha[j] = matriz_linha[j + 1];
-                matriz_linha[j + 1] = x;
+			
+			int lin1 = j / colunas, lin2 = (j + 1) / colunas;
+			int col1 = j % colunas, col2 = (j + 1) % colunas;
+			
+			
+            if(matriz[lin1][col1] > matriz[lin2][col2]){
+                double x = matriz[lin1][col1];
+                matriz[lin1][col1] = matriz[lin2][col2];
+                matriz[lin2][col2] = x;
             }
         }
     }
-	
-	for(int i = 0; i < linhas; i++)
-		for(int j = 0; j < colunas; j++)
-			matriz[i][j] = matriz_linha[colunas * i + j];
 }
 
 void ordenar_linhas_mint(int **matriz, int linhas, int colunas){
