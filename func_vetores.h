@@ -156,6 +156,39 @@ double busca_maior_vdouble(double vetor[], int inicio, int fim){
 	return maior;
 }
 
+int busca_menor_vint(int vetor[], int inicio, int fim){
+	
+	int menor = vetor[inicio];
+	
+	for(int i = inicio + 1; i < fim; i++)
+		if(vetor[i] < menor)
+			menor = vetor[i];
+	
+	return menor;
+}
+
+float busca_menor_vfloat(float vetor[], int inicio, int fim){
+	
+	float menor = vetor[inicio];
+	
+	for(int i = inicio + 1; i < fim; i++)
+		if(vetor[i] < menor)
+			menor = vetor[i];
+	
+	return menor;
+}
+
+double busca_menor_vdouble(double vetor[], int inicio, int fim){
+	
+	double menor = vetor[inicio];
+	
+	for(int i = inicio + 1; i < fim; i++)
+		if(vetor[i] < menor)
+			menor = vetor[i];
+	
+	return menor;
+}
+
 int pertence_vint(int vetor_int[], int num_elem, int valor_procurado){
     
     int i = 0, f = num_elem - 1, m;
@@ -198,9 +231,9 @@ int pertence_vdouble(double vetor_float[], int num_elem, double valor_procurado)
     return 0;
 }
 
-int busca_bin_vint(int vetor_int[], int num_elem, int valor_procurado){
-
-    if(pertence_vint(vetor_int, num_elem, valor_procurado) == 0) return -1;
+int busca_bin_vint(int vetor_int[], int num_elem, int valor_procurado, int condicao){
+	if(condicao != 0)
+		if(pertence_vint(vetor_int, num_elem, valor_procurado) == 0) return -1;
     
     int i = 0, f = num_elem - 1, m;
     
@@ -213,9 +246,10 @@ int busca_bin_vint(int vetor_int[], int num_elem, int valor_procurado){
     
 }
 
-int busca_bin_vfloat(float vetor_float[], int num_elem, float valor_procurado){
-
-    if(pertence_vfloat(vetor_float, num_elem, valor_procurado) == 0) return -1;
+int busca_bin_vfloat(float vetor_float[], int num_elem, float valor_procurado, int condicao){
+	
+	if(condicao != 0)
+		if(pertence_vfloat(vetor_float, num_elem, valor_procurado) == 0) return -1;
     
     int i = 0, f = num_elem - 1, m;
     
@@ -228,9 +262,10 @@ int busca_bin_vfloat(float vetor_float[], int num_elem, float valor_procurado){
     
 }
 
-int busca_bin_vdouble(double vetor_double[], int num_elem, double valor_procurado){
-
-    if(pertence_vdouble(vetor_double, num_elem, valor_procurado) == 0) return -1;
+int busca_bin_vdouble(double vetor_double[], int num_elem, double valor_procurado, int condicao){
+	
+	if(condicao != 0)
+		if(pertence_vdouble(vetor_double, num_elem, valor_procurado) == 0) return -1;
     
     int i = 0, f = num_elem - 1, m;
     
