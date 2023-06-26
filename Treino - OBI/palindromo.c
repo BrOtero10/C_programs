@@ -10,9 +10,9 @@ int main(){
 	for(int i = 0; i < n_elem; i++)
 		scanf("%d", &lista[i]);
 	
-	int k = 0;
+	int k = 0, l = 0;
 	
-	for(int i = 0; i < repeticoes; i++){
+	for(int i = 0; i < repeticoes - l; i++){
 		
 		while(lista[i] != lista[n_elem - i - k - 1]){
 			if(lista[i] < lista[n_elem - i - k - 1]){
@@ -30,6 +30,8 @@ int main(){
 				conta++;
 			}
 		}
+		
+		l = k / 2;
 	}
 	
 	printf("%d", conta);
