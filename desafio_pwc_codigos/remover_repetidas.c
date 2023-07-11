@@ -44,7 +44,10 @@ int main(){
   Letras *letras = malloc(sizeof(Letras));
 
   for(int i = 0; i < strlen(palavras); i++){
-    if(verificar_letra(letras, palavras[i])){
+	if(palavras[i] == ' ')
+		 printf(" ");
+	
+    else if(verificar_letra(letras, palavras[i])){
       inserir_letras(&letras, palavras[i]);
       printf("%c", palavras[i]);
     }
