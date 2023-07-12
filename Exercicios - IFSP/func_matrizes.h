@@ -58,7 +58,7 @@ double **matriz_double(int linhas, int colunas){
 	return matriz;
 }
 
-void preencher_mint(int **matriz, int linhas, int colunasn int valor){
+void preencher_mint(int **matriz, int linhas, int colunas, int valor){
 	
 	for(int i = 0; i < linhas; i++)
 		for(int j = 0; j < colunas; j++)
@@ -258,7 +258,7 @@ double busca_maior_mdouble(double **matriz, int linhas, int colunas){
 }
 
 int busca_menor_mint(int **matriz, int linhas, int colunas){
-	int meno = matriz[0][0];
+	int menor = matriz[0][0];
 	
 	for(int i = 0; i < linhas; i++)
 		for(int j = 0; j < colunas; j++)

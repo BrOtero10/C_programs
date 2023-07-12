@@ -7,7 +7,7 @@
 
 typedef struct word {
 
-  char palavra[25];     // palavras com no máximo 25 caracteres
+  char palavra[25];     // palavras com no máximo 20 caracteres
   struct word *proxima; // ligação para a próxima palavra
 
 } Word;
@@ -95,19 +95,4 @@ char altera_palavras(Word *palavras){
       auxiliar = auxiliar -> proxima;
     }
   }
-}
-
-int main() {
-  char frase[500]; // frase com no máximo 500 caracteres
-  fgets(frase, 500, stdin);
-
-  Word *palavras = malloc(sizeof(Word));
-  memset(palavras, 0, sizeof(Word)); //Remove lixo de memoria
-
-  separar_palavras(palavras, frase);
-  altera_palavras(palavras);
-
-  imprimir_word(palavras);
-  
-  return 0;
 }
