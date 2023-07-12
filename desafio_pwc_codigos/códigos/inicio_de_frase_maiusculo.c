@@ -20,15 +20,15 @@ void separar_palavras(Word *palavras, char frase[500]) {
 
   if(frase) {
     while (frase[i] != '\n' && frase[i]) {
-      char palavra[25];
+		char palavra[25];
 
-      int j = 0;
+		int j = 0;
 
-      if (frase[i] != ' ') {
+		if (frase[i] != ' ') {
         while (frase[i] != ' ' && frase[i] != '\n') {
-          palavra[j] = frase[i];
-          j++;
-          i++;
+			palavra[j] = frase[i];
+			j++;
+			i++;
         }
         
         palavra[j] = '\0';
@@ -36,8 +36,11 @@ void separar_palavras(Word *palavras, char frase[500]) {
         novo->proxima = malloc(sizeof(Word));
         novo = novo->proxima;
         if(frase[i] != '\n')
-          i++;
+			i++;
       }
+	  
+		else
+			i++;
     }
   }
 }
@@ -70,7 +73,7 @@ char ultimo_caractere(char palavra[25]){
 
 //Procedimento para alterar as primeiras letras das palavras em inicio de frase
 
-char altera_palavras(Word *palavras){
+void altera_palavras(Word *palavras){
   Word *auxiliar = palavras;
 
   if(auxiliar){

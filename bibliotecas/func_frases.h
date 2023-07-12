@@ -7,14 +7,14 @@
 
 typedef struct word {
 
-  char palavra[25];     // palavras com no máximo 20 caracteres
+  char palavra[25];     // palavras com no máximo 25 caracteres
   struct word *proxima; // ligação para a próxima palavra
 
 } Word;
 
 // Procedimento para separar as palavras da frase
 
-void separar_palavras(Word *palavras, char frase[500]) {
+void separar_palavras(Word *palavras, char *frase) {
   Word *novo = palavras;
   int i = 0;
 
@@ -38,6 +38,9 @@ void separar_palavras(Word *palavras, char frase[500]) {
         if(frase[i] != '\n')
           i++;
       }
+
+      else
+        i++;
     }
   }
 }
@@ -58,7 +61,7 @@ void imprimir_word(Word *word) {
 
 //Procedimento para obter o ultimo caractere de uma palavra
 
-char ultimo_caractere(char palavra[25]){
+char ultimo_caractere(char *palavra){
 
   int i;
   for(i = 0; palavra[i] != '\0' && palavra[i]; i++)
@@ -70,7 +73,7 @@ char ultimo_caractere(char palavra[25]){
 
 //Procedimento para alterar as primeiras letras das palavras em inicio de frase
 
-char altera_palavras(Word *palavras){
+void altera_palavras(Word *palavras){
   Word *auxiliar = palavras;
 
   if(auxiliar){
